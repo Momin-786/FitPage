@@ -6,7 +6,7 @@ export default function HeroSection() {
   };
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="home" className="relative min-h-screen flex items-center overflow-hidden pt-24 pb-16">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img 
@@ -15,45 +15,53 @@ export default function HeroSection() {
           className="w-full h-full object-cover"
         />
       </div>
-      <div className="absolute inset-0 gradient-overlay z-10"></div>
+      <div className="absolute inset-0 hero-backdrop z-10"></div>
+      <div className="absolute inset-0 hero-vignette z-10"></div>
+      <div className="absolute inset-0 noise-overlay z-10"></div>
       
-      <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div className="space-y-8 animate-fade-in-up">
-          <h1 className="text-5xl md:text-7xl font-oswald font-bold text-white text-shadow leading-tight">
-            TRANSFORM YOUR
-            <span className="text-orange-primary"> BODY</span><br />
-            TRANSFORM YOUR
-            <span className="text-lime-accent"> LIFE</span>
-          </h1>
-          <p className="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto font-light">
-            Join thousands who've already transformed their lives with our science-backed fitness programs. 
-            Your journey to a stronger, healthier you starts today.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-8">
-            <button 
-              className="bg-orange-primary hover:bg-orange-600 text-white px-8 py-4 rounded-lg text-lg font-semibold transform hover:scale-105 transition-all duration-300 shadow-2xl flex items-center gap-2"
-              data-testid="button-start-journey"
-              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
-              Start Your Journey <ArrowRight size={20} />
-            </button>
-            <button 
-              className="border-2 border-white text-white hover:bg-white hover:text-charcoal px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 flex items-center gap-2"
-              data-testid="button-watch-story">
-              Watch Our Story <Play size={20} />
-            </button>
+      <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div className="grid lg:grid-cols-[1.2fr_0.8fr] gap-12 items-center">
+          <div className="space-y-8 animate-fade-in-up text-center lg:text-left">
+            <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full glass-panel badge-glow text-xs uppercase tracking-[0.3em] text-gray-200">
+              Next-Level Coaching
+              <span className="w-2 h-2 rounded-full bg-orange-primary animate-pulse-ring"></span>
+            </div>
+            <h1 className="text-5xl md:text-7xl font-oswald font-bold text-white text-shadow leading-tight">
+              TRANSFORM YOUR
+              <span className="text-gradient"> BODY</span><br />
+              TRANSFORM YOUR
+              <span className="text-lime-accent"> LIFE</span>
+            </h1>
+            <p className="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto lg:mx-0 font-light">
+              Join thousands who've already transformed their lives with our science-backed fitness programs.
+              Your journey to a stronger, healthier you starts today.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center mt-8">
+              <button 
+                className="bg-orange-primary hover:bg-orange-600 text-white px-8 py-4 rounded-lg text-lg font-semibold transform hover:scale-105 transition-all duration-300 shadow-2xl flex items-center gap-2"
+                data-testid="button-start-journey"
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
+                Start Your Journey <ArrowRight size={20} />
+              </button>
+              <button 
+                className="border-2 border-white/80 text-white hover:bg-white hover:text-charcoal px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 flex items-center gap-2"
+                data-testid="button-watch-story">
+                Watch Our Story <Play size={20} />
+              </button>
+            </div>
           </div>
-          
+
           {/* Stats Counter */}
-          <div className="grid grid-cols-3 gap-8 mt-16 max-w-2xl mx-auto">
-            <div className="text-center" data-testid="stat-members">
+          <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-1 gap-4">
+            <div className="glass-panel rounded-2xl px-6 py-5 text-center lg:text-left animate-float-slow" data-testid="stat-members">
               <div className="text-3xl md:text-4xl font-oswald font-bold text-orange-primary">5000+</div>
               <div className="text-gray-300">Members Transformed</div>
             </div>
-            <div className="text-center" data-testid="stat-success">
+            <div className="glass-panel rounded-2xl px-6 py-5 text-center lg:text-left animate-float-slow" data-testid="stat-success">
               <div className="text-3xl md:text-4xl font-oswald font-bold text-blue-secondary">98%</div>
               <div className="text-gray-300">Success Rate</div>
             </div>
-            <div className="text-center" data-testid="stat-support">
+            <div className="glass-panel rounded-2xl px-6 py-5 text-center lg:text-left animate-float-slow" data-testid="stat-support">
               <div className="text-3xl md:text-4xl font-oswald font-bold text-lime-accent">24/7</div>
               <div className="text-gray-300">Support</div>
             </div>
